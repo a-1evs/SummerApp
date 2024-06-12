@@ -52,7 +52,7 @@ export default function EventDisplay() {
   //activate blink when event starts
   const isEventOngoing = (event) => {
     //TODO have function return true if event is starting and for 5 minutes after the start of an event.
-    return true;
+    return false;
   };
 
   //Renders all events, used to achive scrolling illusion
