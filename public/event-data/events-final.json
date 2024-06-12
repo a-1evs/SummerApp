@@ -1,0 +1,241 @@
+{
+    "Sunday": {
+        "Dinner": [
+            {
+                "Day": "Sunday",
+                "Name": "Killing Steve",
+                "Staff": [
+                    "Andrew Andrew",
+                    "Andrew Andrew"
+                ],
+                "Type": "Console Game",
+                "Location": "Main Lab",
+                "Description": ""
+            },
+            {
+                "Day": "Sunday",
+                "Name": "test",
+                "Staff": [
+                    "james doe",
+                    "john doe"
+                ],
+                "Type": "Outdoor Activity",
+                "Location": "Creative Suite",
+                "Description": "running around outside"
+            }
+        ],
+        "6:30": [],
+        "7:15": [],
+        "8:00": []
+    },
+    "Monday": {
+        "6:30": [
+            {
+                "Day": "Monday",
+                "Name": "Frisbee",
+                "Staff": [
+                    "Andrew Levy",
+                    "Steven Fink"
+                ],
+                "Type": "Outdoor Activity",
+                "Location": "Front Field",
+                "Description": ""
+            },
+            {
+                "Day": "Monday",
+                "Name": "Overwatch",
+                "Staff": [
+                    "Ian Nugent",
+                    "Jake Rowen",
+                    "Gabe Sousa"
+                ],
+                "Type": "LAN Game",
+                "Location": "Main Lab",
+                "Description": ""
+            }
+        ],
+        "7:15": [
+            {
+                "Day": "Monday",
+                "Name": "Yoga",
+                "Staff": [
+                    "Emily Smith"
+                ],
+                "Type": "Indoor Activity",
+                "Location": "Yoga Studio",
+                "Description": "Relaxing yoga session"
+            }
+        ],
+        "8:00": []
+    },
+    "Tuesday": {
+        "6:30": [],
+        "7:15": [
+            {
+                "Day": "Tuesday",
+                "Name": "Running Club",
+                "Staff": [
+                    "Mark Johnson"
+                ],
+                "Type": "Outdoor Activity",
+                "Location": "Park",
+                "Description": "Group running session"
+            }
+        ],
+        "8:00": []
+    },
+    "Wednesday": {
+        "6:30": [],
+        "7:15": [],
+        "8:00": [
+            {
+                "Day": "Wednesday",
+                "Name": "Book Club",
+                "Staff": [
+                    "Sarah Williams"
+                ],
+                "Type": "Indoor Activity",
+                "Location": "Library",
+                "Description": "Discussing the latest bestseller"
+            }
+        ]
+    },
+    "Thursday": {
+        "6:30": [
+            {
+                "Day": "Thursday",
+                "Name": "Underwater Basket weaving",
+                "Staff": [
+                    "Rene M",
+                    "Gary Levy"
+                ],
+                "Type": "Outdoor Activity",
+                "Location": "Suny Purchase Pool",
+                "Description": "Weaving baskets underwater"
+            },
+            {
+                "Day": "Thursday",
+                "Name": "Gartic Phone",
+                "Staff": [
+                    "Emma Watson",
+                    "Tom Hardy"
+                ],
+                "Type": "LAN Game",
+                "Location": "Main Lab",
+                "Description": "We play Gartic Phone!"
+            }
+        ],
+        "7:15": [
+            {
+                "Day": "Thursday",
+                "Name": "Painting Class",
+                "Staff": [
+                    "Emily Johnson"
+                ],
+                "Type": "Arts and Crafts",
+                "Location": "Art Studio",
+                "Description": "Guided painting session"
+            },
+            {
+                "Day": "Thursday",
+                "Name": "Smash Bros",
+                "Staff": [
+                    "Michael Smith",
+                    "Joe Obama"
+                ],
+                "Type": "Console Game",
+                "Location": "Kitchen",
+                "Description": "Learning to cook Italian cuisine"
+            }
+        ],
+        "8:00": [
+            {
+                "Day": "Thursday",
+                "Name": "Group Viewing/Screening",
+                "Staff": [
+                    "Rachel Green"
+                ],
+                "Type": "Group Viewing/Screening",
+                "Location": "Photography Studio",
+                "Description": "Introduction to photography techniques"
+            },
+            {
+                "Day": "Thursday",
+                "Name": "Board Gamer",
+                "Staff": [
+                    "John Doe"
+                ],
+                "Type": "Board or Tabletop Game",
+                "Location": "Game Land",
+                "Description": "Maintaining the garden"
+            },
+            {
+                "Day": "Thursday",
+                "Name": "Nerd Alert",
+                "Staff": [
+                    "John Snow"
+                ],
+                "Type": "Presentation/Lecture",
+                "Location": "Creative Suite",
+                "Description": "Maintaining the garden"
+            },
+            {
+                "Day": "Thursday",
+                "Name": "Haha Funi Meem",
+                "Staff": [
+                    "Joe Obama SR"
+                ],
+                "Type": "Joke Event/Other",
+                "Location": "4chan",
+                "Description": "Maintaining the garden"
+            }
+        ]
+    },
+    "Friday": {
+        "3:00": [
+            {
+                "Day": "Friday",
+                "Name": "Movie Marathon",
+                "Staff": [
+                    "David Brown",
+                    "Lisa Taylor"
+                ],
+                "Type": "Indoor Activity",
+                "Location": "Common Room",
+                "Description": "Watching classic movies"
+            }
+        ],
+        "4:00": [],
+        "5:00": [],
+        "7:00": [],
+        "8:00": []
+    },
+    "Saturday": {
+        "Outdoor Time": [],
+        "7:30": [
+            {
+                "Day": "Saturday",
+                "Name": "Hiking",
+                "Staff": [
+                    "Michael Anderson"
+                ],
+                "Type": "Outdoor Activity",
+                "Location": "Forest",
+                "Description": "Exploring nature trails"
+            }
+        ],
+        "8:00": [
+            {
+                "Day": "Saturday",
+                "Name": "Cooking Class",
+                "Staff": [
+                    "Sophia Martinez"
+                ],
+                "Type": "Indoor Activity",
+                "Location": "Kitchen",
+                "Description": "Learning to cook Italian cuisine"
+            }
+        ],
+        "8:30": []
+    }
+}
