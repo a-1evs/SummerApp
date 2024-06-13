@@ -49,14 +49,8 @@ export default function EventDisplay() {
   ][currentDayOfWeek];
   const eventsForCurrentDay = eventData[currentDay] || {};
 
-  //activate blink when event starts
-  const isEventOngoing = (event) => {
-    //TODO have function return true if event is starting and for 5 minutes after the start of an event.
-    return false;
-  };
-
   //Renders all events, used to achive scrolling illusion
-  const renderEvents = (events) =>
+  const renderEvents = (events, eventsTime) =>
     events.map((event, eventIndex) => {
       const imageUrl =
         eventTypeToImageMap[event.Type] || "/images/default.webp";
@@ -67,7 +61,7 @@ export default function EventDisplay() {
           staffNames={event.Staff.join(", ")}
           location={event.Location}
           imageUrl={imageUrl}
-          isOngoing={isEventOngoing(event)}
+          time={eventsTime}
         />
       );
     });
@@ -88,7 +82,7 @@ export default function EventDisplay() {
               <div key={timeIndex} className="mb-8">
                 <h2 className="text-xl font-bold mb-2">{time}</h2>
                 {events.length > 0 ? (
-                  renderEvents(events) // Render events for this time slot
+                  renderEvents(events, time) // Render events for this time slot
                 ) : (
                   <p>No events scheduled for this time.</p>
                 )}
@@ -102,7 +96,7 @@ export default function EventDisplay() {
               <div key={timeIndex} className="mb-8">
                 <h2 className="text-xl font-bold mb-2">{time}</h2>
                 {events.length > 0 ? (
-                  renderEvents(events) // Render events again to create a seamless scrolling effect
+                  renderEvents(events, time) // Render events again to create a seamless scrolling effect
                 ) : (
                   <p>No events scheduled for this time.</p>
                 )}
