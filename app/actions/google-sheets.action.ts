@@ -11,7 +11,7 @@ export async function getSheetData() {
             "type": configData.type,
             "project_id": configData.project_id,
             "private_key_id": configData.private_key_id,
-            "private_key": configData.private_key,
+            "private_key": process.env.GOOGLE_API_KEY,
             "client_email": configData.client_email,
             "universe_domain": configData.universe_domain
         },

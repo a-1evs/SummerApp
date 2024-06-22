@@ -12,7 +12,7 @@ const getWeek = () => {
     return 'Z';
   }
 
-  const weekNumber = Math.floor((now - startOfWeekA) / msInWeek);
+  const weekNumber = Math.floor((now.getTime() - startOfWeekA.getTime()) / msInWeek);
   const weeks = ['A', 'B', 'C', 'D', 'E', 'F'];
   return weeks[weekNumber] || 'Z';
 };
