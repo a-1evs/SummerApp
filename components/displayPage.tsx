@@ -15,13 +15,19 @@ const eventTypeToImageMap = {
   "Game of the Week": "/images/event-logos/",
 };
 
+interface GroupedByTime {
+    [time: string]: string[][]; // Maps a time string to a 2D array of strings (events)
+}
+
 export default function EventDisplayComponent({sheetData}) {
-  const scrollContainerRef = useRef(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   // Controls Auto Scroll Effect
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
     const scrollSpeed = 2; // Adjust the scroll speed as needed
+    console.log(scrollContainer);
+    if (!scrollContainer) return;
 
     const scroll = () => {
       if (scrollContainer.scrollTop >= scrollContainer.scrollHeight / 2) {
@@ -33,7 +39,7 @@ export default function EventDisplayComponent({sheetData}) {
     const interval = setInterval(scroll, 40); // Adjust the interval as needed
 
     return () => clearInterval(interval);
-  }, []);
+  }, [scrollContainerRef]);
   var currentDayOfWeek = new Date().getDay(); // 0 for Sunday, 1 for Monday, ..., 6 for Saturday
   const currentDay = [
     "Sunday",
@@ -44,11 +50,11 @@ export default function EventDisplayComponent({sheetData}) {
     "Friday",
     "Saturday",
   ][currentDayOfWeek];
-  const eventsForCurrentDay = sheetData.filter((data) => {
+  const eventsForCurrentDay: string[][] = sheetData.filter((data) => {
     return data[1] == currentDay;
   }) || {};
 
-  const groupedByTime = eventsForCurrentDay.reduce((acc, event) => {
+  const groupedByTime: GroupedByTime = eventsForCurrentDay.reduce((acc, event) => {
     const time = event[8]; // Assuming the 8th element is the event time
     if (!acc[time]) {
       acc[time] = [];
@@ -60,7 +66,7 @@ export default function EventDisplayComponent({sheetData}) {
   console.log(groupedByTime)
 
   //Renders all events, used to achive scrolling illusion
-  const renderEvents = (events, eventsTime) =>
+  const renderEvents = (events: string[][], eventsTime: string) =>
     events.map((event, eventIndex) => {
       const imageUrl =
         eventTypeToImageMap[event[4]] || "/images/default.webp";
