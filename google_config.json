@@ -1,0 +1,13 @@
+{
+    "type": "service_account",
+    "project_id": "summerapp-427120",
+    "private_key_id": "1f644853d0a7ce0f0d056313999a93e2935c1561",
+    "client_email": "devaccount@summerapp-427120.iam.gserviceaccount.com",
+    "client_id": "117382618723373556555",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/devaccount%40summerapp-427120.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+  }
+  

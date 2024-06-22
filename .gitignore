@@ -7,7 +7,6 @@
 .yarn/install-state.gz
 
 yarn.lock
-google_config.json
 .env.development
 
 # testing
