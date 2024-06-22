@@ -35,16 +35,21 @@ const formatDate = (date) => {
 };
 
 const Header = () => {
-  const [dateTime, setDateTime] = useState(new Date());
+  const [week, setWeek] = useState<string>();
+  const [day, setDay] = useState<string>();
+  const [time, setTime] = useState<string>();
 
   useEffect(() => {
-    const timer = setInterval(() => setDateTime(new Date()), 1000);
+    const timer = setInterval(
+      () => {
+        setWeek(getWeek());
+        setDay(formatDate(new Date()));
+        setTime(new Date().toLocaleTimeString());
+      }, 1000);
     return () => clearInterval(timer);
   }, []);
 
-  const week = getWeek();
-  const day = formatDate(dateTime);
-  const time = dateTime.toLocaleTimeString();
+  
   
   const sizeFactor = 1.5
   return (

@@ -26,6 +26,7 @@ export default function EventDisplayComponent() {
         const fetchData = async () => {
             try {
                 const data = await getSheetData();
+                
                 setSheetData(data); // Update your state with the fetched data
             } catch (error) {
                 console.error('Failed to fetch data:', error);
@@ -78,7 +79,31 @@ export default function EventDisplayComponent() {
     return acc;
   }, {});
 
-  console.log(groupedByTime)
+  const sorted = Object.fromEntries(
+    Object.entries(groupedByTime).sort((a, b) => {
+      if(a[0]==="Dinner Time") {
+        return -1;
+      }
+      const now = new Date();
+      const [ahours, aminutes] = a[0].split(":").map(Number);
+      const aStartTime = new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate(),
+        ahours % 12 + 12,
+        aminutes
+      );
+      const [bhours, bminutes] = b[0].split(":").map(Number);
+      const bStartTime = new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate(),
+        bhours % 12 + 12,
+        bminutes
+      );
+      return aStartTime.valueOf() - bStartTime.valueOf();
+    })
+  )
 
   //Renders all events, used to achive scrolling illusion
   const renderEvents = (events: string[][], eventsTime: string) =>
@@ -108,7 +133,7 @@ export default function EventDisplayComponent() {
         {" "}
         {/* Scroll container */}
         <div>
-          {Object.entries(groupedByTime).map(
+          {Object.entries(sorted).map(
             ([time, events], timeIndex) => (
               <div key={timeIndex} className="mb-8">
                 <h2 className="text-xl font-bold mb-2">{time}</h2>
@@ -122,7 +147,7 @@ export default function EventDisplayComponent() {
           )}
         </div>
         <div>
-          {Object.entries(groupedByTime).map(
+          {Object.entries(sorted).map(
             ([time, events], timeIndex) => (
               <div key={timeIndex} className="mb-8">
                 <h2 className="text-xl font-bold mb-2">{time}</h2>
