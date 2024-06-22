@@ -23,7 +23,7 @@ export default function EventDisplay() {
   const eventsForCurrentDay = eventData[currentDay] || {};
 
   // Renders all events
-  const renderEvents = (events) => (
+  const renderEvents = (events, time) => (
     events.map((event, eventIndex) => {
       const imageUrl = eventTypeToImageMap[event.Type] || "/images/default.webp";
       return (
@@ -32,6 +32,7 @@ export default function EventDisplay() {
           title={event.Name}
           staffNames={event.Staff.join(", ")}
           location={event.Location}
+          time={time}
           imageUrl={imageUrl}
         />
       );
@@ -45,7 +46,7 @@ export default function EventDisplay() {
           <div key={timeIndex} className="mb-8">
             <h2 className="text-xl font-bold mb-2">{time}</h2>
             {events.length > 0 ? (
-              renderEvents(events)
+              renderEvents(events, time)
             ) : (
               <p>No events scheduled for this time.</p>
             )}
