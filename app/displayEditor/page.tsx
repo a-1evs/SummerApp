@@ -1,6 +1,5 @@
 import React from 'react';
 import EventCard from "@/components/event-card";
-import eventData from "/public/event-data/events-final.json";
 
 // Define a mapping of event types to image URLs
 const eventTypeToImageMap = {
@@ -42,16 +41,7 @@ export default function EventDisplay() {
   return (
     <div className="h-screen overflow-y-auto pt-24"> {/* Add padding to the top */}
       <div>
-        {Object.entries(eventsForCurrentDay).map(([time, events], timeIndex) => (
-          <div key={timeIndex} className="mb-8">
-            <h2 className="text-xl font-bold mb-2">{time}</h2>
-            {events.length > 0 ? (
-              renderEvents(events, time)
-            ) : (
-              <p>No events scheduled for this time.</p>
-            )}
-          </div>
-        ))}
+        not functional
       </div>
     </div>
   );

@@ -1,8 +1,6 @@
 "use client"
 import React, { useEffect, useRef } from "react";
 import EventCard from "@/components/event-card";
-import eventData from "/public/event-data/events-final.json";
-import { group } from "console";
 // Define a mapping of event types to image URLs
 const eventTypeToImageMap = {
   "Console Game": "/images/event-logos/console-game.jpg",
