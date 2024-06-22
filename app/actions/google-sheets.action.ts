@@ -25,5 +25,9 @@ export async function getSheetData() {
         range: 'B2:J',
     });
 
-    return data.data.values;
+    if(!data || !data.data.values) {
+        return [];
+    }
+
+    return data.data.values as string[][];
 }
