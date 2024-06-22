@@ -1,3 +1,4 @@
+"use server"
 import React, { useEffect, useRef } from "react";
 import { getSheetData } from "../actions/google-sheets.action";
 import EventDisplayComponent from "@/components/displayPage";
