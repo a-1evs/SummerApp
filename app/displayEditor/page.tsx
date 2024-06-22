@@ -19,7 +19,6 @@ export default function EventDisplay() {
   var currentDayOfWeek = new Date().getDay(); // 0 for Sunday, 1 for Monday, ..., 6 for Saturday
   currentDayOfWeek = 4; // for testing, change to any day of the week you want to test
   const currentDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][currentDayOfWeek];
-  const eventsForCurrentDay = eventData[currentDay] || {};
 
   // Renders all events
   const renderEvents = (events, time) => (
