@@ -5,7 +5,6 @@ import { promises as fs } from 'fs';
 export async function getSheetData() { 
     const file = await fs.readFile(process.cwd() + '/google_config.json', 'utf8');
   const configData = JSON.parse(file);
-  console.log(process.env.GOOGLE_API_KEY)
   const glAuth = await google.auth.getClient({
         projectId: "summerapp-427120",
         credentials: {

@@ -1,6 +1,7 @@
 "use client"
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import EventCard from "@/components/event-card";
+import { getSheetData } from "@/app/actions/google-sheets.action";
 // Define a mapping of event types to image URLs
 const eventTypeToImageMap = {
   "Console Game": "/images/event-logos/console-game.jpg",
@@ -19,27 +20,41 @@ interface GroupedByTime {
     [time: string]: string[][]; // Maps a time string to a 2D array of strings (events)
 }
 
-export default function EventDisplayComponent({sheetData}) {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+export default function EventDisplayComponent() {
+    const [sheetData, setSheetData] = useState<string[][]>([]);
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const data = await getSheetData();
+                setSheetData(data); // Update your state with the fetched data
+            } catch (error) {
+                console.error('Failed to fetch data:', error);
+            }
+        };
+
+        // Call the async function
+        fetchData();
+    }, [])
+
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   // Controls Auto Scroll Effect
-  useEffect(() => {
-    const scrollContainer = scrollContainerRef.current;
-    const scrollSpeed = 2; // Adjust the scroll speed as needed
-    console.log(scrollContainer);
-    if (!scrollContainer) return;
+    useEffect(() => {
+        const scrollContainer = scrollContainerRef.current;
+        const scrollSpeed = 2; // Adjust the scroll speed as needed
+        if (!scrollContainer) return;
 
-    const scroll = () => {
-      if (scrollContainer.scrollTop >= scrollContainer.scrollHeight / 2) {
-        scrollContainer.scrollTop = 0;
-      }
-      scrollContainer.scrollTop += scrollSpeed;
-    };
+        const scroll = () => {
+        if (scrollContainer.scrollTop >= scrollContainer.scrollHeight / 2) {
+            scrollContainer.scrollTop = 0;
+        }
+        scrollContainer.scrollTop += scrollSpeed;
+        };
 
-    const interval = setInterval(scroll, 40); // Adjust the interval as needed
+        const interval = setInterval(scroll, 40); // Adjust the interval as needed
 
-    return () => clearInterval(interval);
-  }, [scrollContainerRef]);
+        return () => clearInterval(interval);
+    }, [scrollContainerRef]);
   var currentDayOfWeek = new Date().getDay(); // 0 for Sunday, 1 for Monday, ..., 6 for Saturday
   const currentDay = [
     "Sunday",
