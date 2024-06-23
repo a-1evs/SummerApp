@@ -8,7 +8,7 @@ const Weather = () => {
 
     const apiKey = 'c593b4d013e4a33298c51db30dd9096c';
     const location = 'Scarsdale'; // Replace with your location
-	const numberOfWeathers = 3;
+	const numberOfWeathers = 4;
 
     useEffect(() => {
         const fetchWeather = async () => {
