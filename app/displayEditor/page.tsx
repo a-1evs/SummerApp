@@ -1,4 +1,3 @@
-import React from 'react';
 import EventCard from "@/components/event-card";
 
 // Define a mapping of event types to image URLs

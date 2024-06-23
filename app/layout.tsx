@@ -1,4 +1,3 @@
-import React from "react"
 import Header from "@/components/Header" // Ensure the path is correct
 import "./globals.css" // Import your global styles
 
