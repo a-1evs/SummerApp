@@ -48,7 +48,7 @@ const Weather = () => {
         <div>
             {forecast.length > 0 ? (
                 <div className="bg-gray p-4 rounded shadow-md flex space-x-8" >
-                    {forecast.slice(0, 3).map((weather, index) => (
+                    {forecast.slice(0, 1).map((weather, index) => (
                         <div key={index} className="text-center" >
                             <div>{(new Date(weather.dt * 1000).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })).substring(0, 5)}</div>
                             <div>{Math.round((weather.main.temp * 9 / 5) + 32)}°F</div>
