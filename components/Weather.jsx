@@ -59,6 +59,27 @@ const Weather = () => {
 			});
 
 			indexElement.dataset.currentWeatherIndex = ind;
+
+			/*
+			* Upon the lake where crystal waters gleam,
+			* There glides a soul both daring and so free,
+			* Andrew Levy, who chases his grand dream,
+			* To master waves, his heart's sweet jubilee.
+
+			* With morning's light, he dons his gear so fine,
+			* His skis carve through the water's glassy face,
+			* He dances on the waves, a true design,
+			* Of grace and power, moving with pure grace.
+
+			* The sun above reflects his golden flight,
+			* Each turn and jump, a testament to skill,
+			* In nature's arms, he finds his pure delight,
+			* His spirit soaring high with boundless thrill.
+
+			* Oh, Andrew Levy, water's faithful king,
+			* In every splash, your heart begins to sing.
+			*/
+			
 		}, 5000);
 	}
 
