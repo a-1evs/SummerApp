@@ -114,7 +114,7 @@ export default function EventDisplayComponent() {
         <EventCard
           key={eventIndex}
           title={event[0]}
-          staffNames={event[2] + ", " + event[3]}
+          staffNames={event[2] + (event[3] != "NO SECOND STAFF" ? (", " + event[3]) : "")}
           location={event[6]}
           imageUrl={imageUrl}
           time={eventsTime}
