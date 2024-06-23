@@ -8,6 +8,7 @@ const Weather = () => {
 
     const apiKey = 'c593b4d013e4a33298c51db30dd9096c';
     const location = 'Scarsdale'; // Replace with your location
+	const numberOfWeathers = 3;
 
     useEffect(() => {
         const fetchWeather = async () => {
@@ -43,14 +44,31 @@ const Weather = () => {
         return <div>Error loading weather: {error}</div>;
     }
 
+	if(typeof globalWeatherTimer == "undefined") {
+		window.globalWeatherTimer = setInterval(function(){
+
+			let indexElement = document.querySelector("[data-current-weather-index]");
+			let ind = Number.parseInt(indexElement.dataset.currentWeatherIndex) + 1;
+			
+			if(ind >= numberOfWeathers-1) { ind = 0; }
+
+			Array.from(document.querySelectorAll("[data-weather-index]")).forEach(forecast=>{
+
+				if(forecast.dataset.weatherIndex != ind) { forecast.style.display = "none"; }
+				else { forecast.style.display = "block"; }
+			});
+
+			indexElement.dataset.currentWeatherIndex = ind;
+		}, 5000);
+	}
 
     return (
         <div>
             {forecast.length > 0 ? (
-                <div className="bg-gray p-4 rounded shadow-md flex space-x-8" >
-                    {forecast.slice(0, 1).map((weather, index) => (
-                        <div key={index} className="text-center" >
-                            <div>{(new Date(weather.dt * 1000).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })).substring(0, 5)}</div>
+                <div className="bg-gray p-4 rounded shadow-md flex space-x-8" data-current-weather-index={0}>
+                    {forecast.slice(0, numberOfWeathers).map((weather, index) => (
+                        <div style = { {display:index!=0?"none":"block"} } key={index} className="text-center"  data-weather-index={index}>
+                            <div>Forecast for {(new Date(weather.dt * 1000).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })).substring(0, 7)}</div>
                             <div>{Math.round((weather.main.temp * 9 / 5) + 32)}°F</div>
                         </div>
                     ))}
