@@ -165,7 +165,7 @@ export default function EventDisplayComponent({isPrint, dayOverride}: { isPrint?
                         )
                     )}
                 </div>
-                <div>
+                <div className={clsx(isPrint && "hidden")}>
                     {Object.entries(sorted).map(
                         ([time, events], timeIndex) => (
                             <div key={timeIndex} className={clsx(isPrint ? "mb-2" : "mb-8")}>
